@@ -1,21 +1,23 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 
-class SiteDocument extends Document {
+class MyDocument extends Document {
+	static async getInitialProps(ctx: DocumentContext) {
+		return await Document.getInitialProps(ctx)
+	}
+
 	render() {
 		return (
 			<Html>
 				<Head>
-					<link rel="preconnect" href="https://fonts.googleapis.com" />
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="crossorigin"/>
-					<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;700&display=swap" rel="stylesheet" />
+					<link href="/fonts/style.css" rel='stylesheet' />
 				</Head>
 				<body>
-				<Main />
-				<NextScript />
+					<Main />
+					<NextScript />
 				</body>
 			</Html>
 		)
 	}
 }
 
-export default SiteDocument
+export default MyDocument

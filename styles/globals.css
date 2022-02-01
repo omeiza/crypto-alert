@@ -1,9 +1,17 @@
+:root {
+  --page-width: 42rem;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: Euclid, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  margin: 8px;
 }
 
 a {
@@ -13,4 +21,21 @@ a {
 
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: MongoSerif, Helvetica Neue, sans-serif;
+  font-weight: normal;
+}
+
+main {
+  margin: 0 auto;
+  max-width: var(--page-width);
+  padding-bottom: 2rem;
+}
+
+header {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
 }
