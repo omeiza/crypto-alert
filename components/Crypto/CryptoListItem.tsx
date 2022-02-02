@@ -1,23 +1,30 @@
 import React, {JSXElementConstructor} from 'react';
 
+type data = {
+    [x: string]: any;
+};
+
 interface props {
     count: number;
-    data: {
-        [x: string]: any;
-    };
+    data: data;
 }
 
 const CryptoListItem = (props: props) => {
-    const index = props.count,
-        data = props.data;
+    const index: number = props.count,
+        data: data = props.data,
+        hrChange: string = data["NGN"]["CHANGEPCTHOUR"],
+        twoFourHrChange: string = data["NGN"]["CHANGEPCT24HOUR"];
+
+    let tickerHrChange: string = (parseFloat(hrChange) < 0) ? 'negative' : 'positive',
+        tickerTwoFourHrChange: string = (parseFloat(twoFourHrChange)) < 0 ? 'negative' : 'positive';
 
     return (
         <tr>
-            <td>{ index }</td>
-            <td>{ data["USD"]["FROMSYMBOL"] }</td>
-            <td>{ data["USD"]["PRICE"] }</td>
-            <td>{ data["USD"]["SUPPLY"] }</td>
-            <td>{ data["USD"]["CHANGE24HOUR"] }</td>
+            <td>{ data["NGN"]["FROMSYMBOL"] }</td>
+            <td>{ data["NGN"]["PRICE"] }</td>
+            <td>{ data["NGN"]["MKTCAP"] }</td>
+            <td className = {`ticker ${tickerHrChange}`}>{ hrChange }%</td>
+            <td className = {`ticker ${tickerTwoFourHrChange}`}>{ twoFourHrChange }%</td>
         </tr>
     )
 }

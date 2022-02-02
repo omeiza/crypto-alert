@@ -1,17 +1,23 @@
 :root {
-  --page-width: 42rem;
+  --page-width: 48rem;
+  --bg: #0a0e12;
+  --table-bg: #181a1f;
+  --table-header-color: rgb(154 154 155);
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Euclid, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-size: 1.05em;
+  font-family: Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 body {
   margin: 8px;
+  background-color: var(--bg);
+  color: white;
 }
 
 a {
@@ -25,8 +31,19 @@ a {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: MongoSerif, Helvetica Neue, sans-serif;
-  font-weight: normal;
+  font-family: Euclid, Helvetica Neue, sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.15;
+}
+
+abbr {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dashed;
 }
 
 main {
@@ -38,4 +55,73 @@ main {
 header {
   padding: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+/*Table*/
+.crypto__container {
+  margin: 3rem 0;
+  border-radius: 5px;
+  overflow-x: auto;
+  border: 1px solid rgba(128, 128, 128, 0.10);
+  background-color: var(--table-bg);
+  box-shadow: rgb(0 0 0 / 2%) 0px 1px 2px 0px;
+  border-bottom: none;
+}
+
+table {
+  border-radius: 5px;
+  border-collapse: collapse;
+  /*background-color: var(--table-bg);*/
+  /*color: white;*/
+}
+
+.ticker {
+  font-family: Euclid, Helvetica Neue, sans-serif;
+  font-weight: bold;
+}
+
+.ticker.positive {
+  color: #44bf44;
+}
+
+.ticker.negative {
+  color: #db3b3b;
+}
+
+td, th {
+  padding: 1.5em 1.5em;
+}
+
+th {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: Euclid, Helvetica Neue, sans-serif;
+  padding-top: 1rem;
+  font-weight: 700;
+  font-size: 0.7em;
+  color: var(--table-header-color);
+}
+
+thead tr {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  z-index: 1;
+  padding-top: 1rem;
+}
+
+td {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  font-family: Grotesk, Helvetica Neue, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.crypto__container .crypto__list {
+  width: 100%;
+  position: relative;
+}
+
+.crypto__container .crypto__list--header th {
+  text-align: left;
 }

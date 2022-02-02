@@ -29,7 +29,7 @@ class Crypto extends Component<cryptoProps, cryptoState> {
         });
     }
 
-    getCrytpoData() {
+    getCrytpoData(): void {
         let CryptoTypes = this.cryptoObject()
         let cryptoArray = this.objectToArray(CryptoTypes[0]),
             cryptoList: string[] = [];
@@ -37,12 +37,13 @@ class Crypto extends Component<cryptoProps, cryptoState> {
         cryptoArray.map((j) => cryptoList.push(j));
         const allCryptoList: string = cryptoList.join(",");
 
-        fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${allCryptoList}&tsyms=USD`)
+        fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${allCryptoList}&tsyms=NGN`)
             .then((response) => {
                 return response.json()
             })
 
             .then((data) => {
+                console.log(data);
                 this.setState({
                     crypto_result: data
                 })
@@ -54,7 +55,6 @@ class Crypto extends Component<cryptoProps, cryptoState> {
     }
 
     render() {
-        // @ts-ignore
         if (!this.state.crypto_result) {
             return (
                 <p> Loading... </p>
@@ -64,11 +64,11 @@ class Crypto extends Component<cryptoProps, cryptoState> {
                 <table className="crypto__list">
                     <thead className="crypto__list--header">
                         <tr>
-                            <th>#</th>
-                            <th>Crypto</th>
+                            <th>Name</th>
                             <th>Price</th>
-                            <th>Circulating Supply</th>
-                            <th>Change (24h)</th>
+                            <th>MKT CAP</th>
+                            <th>% Change (1h)</th>
+                            <th>% Change (24h)</th>
                         </tr>
                     </thead>
                     <CryptoContent data = { this.state.crypto_result } />
