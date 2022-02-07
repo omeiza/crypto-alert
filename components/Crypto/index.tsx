@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import CryptoContent from './CryptoContent';
+import CryptoSearch from "./CryptoSearch";
 
 interface cryptoProps {}
 interface cryptoState {
@@ -61,18 +62,22 @@ class Crypto extends Component<cryptoProps, cryptoState> {
             )
         } else {
             return (
-                <table className="crypto__list">
-                    <thead className="crypto__list--header">
-                        <tr>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>MKT CAP</th>
-                            <th>% Change (1h)</th>
-                            <th>% Change (24h)</th>
-                        </tr>
-                    </thead>
-                    <CryptoContent data = { this.state.crypto_result } />
-                </table>
+                <div className="crypto__container">
+                    <CryptoSearch />
+                    <table className="crypto__list">
+                        <thead className="crypto__list--header">
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>MKT CAP</th>
+                                <th>% Change (1h)</th>
+                                <th>% Change (24h)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <CryptoContent data = { this.state.crypto_result } />
+                    </table>
+                </div>
             )
         }
     }

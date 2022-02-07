@@ -10,8 +10,7 @@ interface props {
 }
 
 const CryptoListItem = (props: props) => {
-    const index: number = props.count,
-        data: data = props.data,
+    const data: data = props.data,
         hrChange: string = data["NGN"]["CHANGEPCTHOUR"],
         twoFourHrChange: string = data["NGN"]["CHANGEPCT24HOUR"];
 
@@ -25,6 +24,7 @@ const CryptoListItem = (props: props) => {
             <td>{ data["NGN"]["MKTCAP"] }</td>
             <td className = {`ticker ${tickerHrChange}`}>{ hrChange }%</td>
             <td className = {`ticker ${tickerTwoFourHrChange}`}>{ twoFourHrChange }%</td>
+            <td><a className="triggerBtn">Alert</a></td>
         </tr>
     )
 }

@@ -1,8 +1,8 @@
 :root {
   --page-width: 48rem;
-  --bg: #0a0e12;
-  --table-bg: #181a1f;
-  --table-header-color: rgb(154 154 155);
+  --bg: #fffefc;
+  /*--table-bg: #f8f8f8;*/
+  --table-bg: #f8f8f8;
 }
 
 html,
@@ -10,14 +10,14 @@ body {
   padding: 0;
   margin: 0;
   font-size: 1.05em;
-  font-family: Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: Euclid, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 body {
   margin: 8px;
   background-color: var(--bg);
-  color: white;
+  color: #111111;
 }
 
 a {
@@ -31,7 +31,7 @@ a {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: Euclid, Helvetica Neue, sans-serif;
+  /*font-family: Euclid, Helvetica Neue, sans-serif;*/
   font-weight: 700;
 }
 
@@ -62,9 +62,9 @@ header {
   margin: 3rem 0;
   border-radius: 5px;
   overflow-x: auto;
-  border: 1px solid rgba(128, 128, 128, 0.10);
+  border: 1px solid rgba(0, 0, 0, 0.075);
   background-color: var(--table-bg);
-  box-shadow: rgb(0 0 0 / 2%) 0px 1px 2px 0px;
+  box-shadow: rgb(0 0 0 / 2%) 0 1px 2px 0;
   border-bottom: none;
 }
 
@@ -76,7 +76,7 @@ table {
 }
 
 .ticker {
-  font-family: Euclid, Helvetica Neue, sans-serif;
+  /*font-family: Euclid, Helvetica Neue, sans-serif;*/
   font-weight: bold;
 }
 
@@ -89,31 +89,29 @@ table {
 }
 
 td, th {
-  padding: 1.5em 1.5em;
+  padding: 1em 0.75em;
 }
 
 th {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-family: Euclid, Helvetica Neue, sans-serif;
   padding-top: 1rem;
   font-weight: 700;
   font-size: 0.7em;
-  color: var(--table-header-color);
 }
 
 thead tr {
   position: sticky;
   top: 0;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
   z-index: 1;
   padding-top: 1rem;
 }
 
 td {
-  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
-  font-family: Grotesk, Helvetica Neue, sans-serif;
-  font-size: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+  font-family: Euclid, Helvetica Neue, sans-serif;
+  font-size: 0.85em;
   font-weight: 500;
 }
 
@@ -124,4 +122,36 @@ td {
 
 .crypto__container .crypto__list--header th {
   text-align: left;
+}
+
+.triggerBtn {
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 2%) 0 1px 2px 0;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  display: inline-block;
+  padding: 0.5em;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.searchSection {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+  padding: 0.5em;
+}
+
+.searchSection input {
+  font-size: inherit;
+  font-family: Euclid, Helvetica Neue, sans-serif;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  padding: 0.5em 1em;
+}
+
+.searchSection input:active,
+.searchSection input:focus {
+  border-color: #118cfd;
 }

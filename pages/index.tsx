@@ -16,9 +16,7 @@ const Home: NextPage = () => {
                 <h1>
                     Get Bitcoin & crypto price alerts delivered via SMS, Telegram, and Discord.
                 </h1>
-                <div className="crypto__container">
-                    <Crypto />
-                </div>
+                <Crypto />
             </main>
             <footer>
                 <a
