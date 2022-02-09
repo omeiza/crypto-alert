@@ -1,8 +1,9 @@
 :root {
   --page-width: 48rem;
-  --bg: #fffefc;
+  --bg: hsl(199, 15%, 13%);
   /*--table-bg: #f8f8f8;*/
-  --table-bg: #f8f8f8;
+  --table-bg: #253237;
+  --body: #ececec;
 }
 
 html,
@@ -10,14 +11,13 @@ body {
   padding: 0;
   margin: 0;
   font-size: 1.05em;
-  font-family: Euclid, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Questrial', sans-serif;
 }
 
 body {
   margin: 8px;
   background-color: var(--bg);
-  color: #111111;
+  color: var(--body);
 }
 
 a {
@@ -62,7 +62,7 @@ header {
   margin: 3rem 0;
   border-radius: 5px;
   overflow-x: auto;
-  border: 1px solid rgba(0, 0, 0, 0.075);
+  border: 1px solid rgb(209 209 209 / 8%);
   background-color: var(--table-bg);
   box-shadow: rgb(0 0 0 / 2%) 0 1px 2px 0;
   border-bottom: none;
@@ -103,15 +103,15 @@ th {
 thead tr {
   position: sticky;
   top: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+  border-bottom: 1px solid rgb(209 209 209 / 8%);
   z-index: 1;
   padding-top: 1rem;
 }
 
 td {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
-  font-family: Euclid, Helvetica Neue, sans-serif;
-  font-size: 0.85em;
+  border-bottom: 1px solid rgb(209 209 209 / 8%);
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.95em;
   font-weight: 500;
 }
 
@@ -127,28 +127,30 @@ td {
 .triggerBtn {
   background-color: white;
   box-shadow: rgb(0 0 0 / 2%) 0 1px 2px 0;
-  border: 1px solid rgba(0, 0, 0, 0.075);
+  border: 1px solid rgb(209 209 209 / 8%);
   font-size: 0.85em;
   letter-spacing: 0.1em;
   font-weight: 700;
   display: inline-block;
-  padding: 0.5em;
-  border-radius: 5px;
+  padding: 0.5em 1em;
+  border-radius: 15px;
   text-transform: uppercase;
+  color: var(--bg);
 }
 
 .searchSection {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+  border-bottom: 1px solid rgb(209 209 209 / 8%);
   padding: 0.5em;
 }
 
 .searchSection input {
   font-size: inherit;
-  font-family: Euclid, Helvetica Neue, sans-serif;
+  font-family: 'Questrial', sans-serif;
   border-radius: 5px;
   width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.075);
+  border: 1px solid rgb(209 209 209 / 8%);
   padding: 0.5em 1em;
+  background-color: #384c58;
 }
 
 .searchSection input:active,
