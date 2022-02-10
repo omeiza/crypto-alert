@@ -1,0 +1,15 @@
+@font-face {
+	font-family: GroteskNormal;
+	src: url('./grotesk/SharpGrotesk-Book20-27320e417fca13664223acf4d9aa844a.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: GroteskBold;
+	src: url('./grotesk/SharpGrotesk-SemiBold25-04ed734090d19b49a38f23a3d4d875b2.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}

@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Header from '../components/Header'
 import Crypto from '../components/Crypto'
 
 const Home: NextPage = () => {
@@ -12,9 +11,8 @@ const Home: NextPage = () => {
                 <meta name="description" content="Get alert about price changes and update for your Cryptocurrency" />
             </Head>
             <main>
-                <Header />
                 <h1>
-                    Get Bitcoin & crypto price alerts delivered via SMS, Telegram, and Discord.
+                    Get Bitcoin & crypto price analysis in your mailbox.
                 </h1>
                 <Crypto />
             </main>
