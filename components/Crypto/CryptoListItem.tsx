@@ -24,7 +24,6 @@ const CryptoListItem = (props: props) => {
             <td>{ data["NGN"]["MKTCAP"] }</td>
             <td className = {`ticker ${tickerHrChange}`}>{ hrChange }%</td>
             <td className = {`ticker ${tickerTwoFourHrChange}`}>{ twoFourHrChange }%</td>
-            <td><a className="triggerBtn">Alert</a></td>
         </tr>
     )
 }

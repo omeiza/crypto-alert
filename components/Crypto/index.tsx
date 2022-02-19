@@ -57,9 +57,8 @@ class Crypto extends Component<cryptoProps, cryptoState> {
 
     render() {
         if (!this.state.crypto_result) {
-            return (
-                <p> Loading... </p>
-            )
+            // Work on a network issue message here
+            return null;
         } else {
             return (
                 <div className="crypto__container">
@@ -72,7 +71,6 @@ class Crypto extends Component<cryptoProps, cryptoState> {
                                 <th>MKT CAP</th>
                                 <th>% Change (1h)</th>
                                 <th>% Change (24h)</th>
-                                <th></th>
                             </tr>
                         </thead>
                         <CryptoContent data = { this.state.crypto_result } />
