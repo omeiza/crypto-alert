@@ -33,7 +33,6 @@ a {
 }
 
 h1, h2, h3, h4, h5 {
-  /*font-family: Euclid, Helvetica Neue, sans-serif;*/
   font-weight: 700;
 }
 
@@ -130,22 +129,32 @@ td {
   text-align: left;
 }
 
-.searchSection {
+.inputStyle {
   border-bottom: 1px solid rgb(209 209 209 / 8%);
   padding: 0.5em;
 }
 
-.searchSection input {
-  font-size: inherit;
-  font-family: var(--font-main);
+.inputStyle input,
+.inputStyle select {
+  font-family: var(--font-bold);
+  font-size: 0.8em;
   border-radius: 5px;
   width: 100%;
   border: 1px solid rgb(209 209 209 / 8%);
-  padding: 0.5em 1em;
+  padding: 0.6em 1em 0.5em;
   background-color: #384c58;
+  color: inherit;
 }
 
-.searchSection input:active,
-.searchSection input:focus {
-  border-color: #118cfd;
+.inputStyle input:active,
+.inputStyle input:focus,
+.inputStyle select:active,
+.inputStyle select:focus {
+  outline: none;
+  border: 1px solid rgb(209 209 209 / 8%);
+}
+
+.filterSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import CryptoContent from './CryptoContent';
-import CryptoSearch from "./CryptoSearch";
+import CryptoFilters from "./CryptoFilters";
 
 interface cryptoProps {}
 interface cryptoState {
@@ -38,7 +38,7 @@ class Crypto extends Component<cryptoProps, cryptoState> {
         cryptoArray.map((j) => cryptoList.push(j));
         const allCryptoList: string = cryptoList.join(",");
 
-        fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${allCryptoList}&tsyms=NGN`)
+        fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${allCryptoList}&tsyms=ARS`)
             .then((response) => {
                 return response.json()
             })
@@ -62,15 +62,16 @@ class Crypto extends Component<cryptoProps, cryptoState> {
         } else {
             return (
                 <div className="crypto__container">
-                    <CryptoSearch />
+                    <CryptoFilters />
                     <table className="crypto__list">
                         <thead className="crypto__list--header">
                             <tr>
+                                <th>#</th>
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>MKT CAP</th>
-                                <th>% Change (1h)</th>
-                                <th>% Change (24h)</th>
+                                <th>% Chng (1h)</th>
+                                <th>% Chng (24h)</th>
                             </tr>
                         </thead>
                         <CryptoContent data = { this.state.crypto_result } />
