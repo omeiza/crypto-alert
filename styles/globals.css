@@ -136,6 +136,7 @@ td {
 
 .inputStyle input,
 .inputStyle select {
+  height: 40px;
   font-family: var(--font-bold);
   font-size: 0.8em;
   border-radius: 5px;
@@ -156,5 +157,5 @@ td {
 
 .filterSection {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
