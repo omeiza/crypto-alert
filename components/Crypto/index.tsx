@@ -19,6 +19,10 @@ class Crypto extends Component<cryptoProps, cryptoState> {
         this.getCryptoData();
     }
 
+    // componentDidUpdate() {
+    //     this.getCryptoData();
+    // }
+
     getCryptoData(): void {
         const cryptoTypes: object[] = initialCoinList(),
             cryptoTypesObject = cryptoTypes[0],
