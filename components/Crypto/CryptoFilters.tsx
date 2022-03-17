@@ -6,6 +6,8 @@ interface filterState {
     selectedCurrency: string
 }
 
+
+
 class CryptoFilters extends Component<any, filterState> {
     constructor(props: any) {
         super(props);

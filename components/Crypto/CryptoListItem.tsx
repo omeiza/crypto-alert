@@ -1,5 +1,3 @@
-import React from 'react';
-
 type data = {
     [x: string]: any;
 };

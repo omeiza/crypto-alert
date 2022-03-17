@@ -1,29 +1,21 @@
-import { Component } from 'react';
+import { useEffect } from 'react';
 import CryptoContent from './CryptoContent';
 import CryptoFilters from "./CryptoFilters";
 import { initialCoinList } from "../Helpers";
+import { useSelector, useDispatch } from "react-redux";
+import { actions } from "../../store/reducer";
+import { RootState } from "../../store";
 
-interface cryptoProps {}
-interface cryptoState { cryptoResult: any }
-
-class Crypto extends Component<cryptoProps, cryptoState> {
-    constructor(props: any) {
-        super(props);
-
-        this.state = {
-            cryptoResult: null
+const Crypto = (props: object): JSX.Element => {
+    const CryptoStoreData: object = useSelector((state: RootState) => {
+        return state.data;
+    }),
+        dispatch = useDispatch(),
+        updateData = (CryptoData: {}) => {
+            dispatch(actions.updateData(CryptoData))
         };
-    }
 
-    componentDidMount() {
-        this.getCryptoData();
-    }
-
-    // componentDidUpdate() {
-    //     this.getCryptoData();
-    // }
-
-    getCryptoData(): void {
+    const getCryptoData = (): void => {
         const cryptoTypes: object[] = initialCoinList(),
             cryptoTypesObject = cryptoTypes[0],
             cryptoList: string[] = [];
@@ -36,36 +28,35 @@ class Crypto extends Component<cryptoProps, cryptoState> {
         fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${allCryptoList}&tsyms=ARS`)
             .then((response) => { return response.json() })
 
-            .then((data) => { this.setState({ cryptoResult: data }) })
+            .then((data) => {
+                updateData(data);
+            })
 
-            .catch((err) => { console.error(`Fetch error: ${err}`) })
+            .catch((err) => { console.error(`Fetch error: ${err}`)})
     }
 
-    render() {
-        if (!this.state.cryptoResult) {
-            // Work on a network issue message here
-            return null;
-        } else {
-            return (
-                <div className="crypto__container">
-                    <CryptoFilters />
-                    <table className="crypto__list">
-                        <thead className="crypto__list--header">
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>MKT CAP</th>
-                                <th>% Chng (1h)</th>
-                                <th>% Chng (24h)</th>
-                            </tr>
-                        </thead>
-                        <CryptoContent data = { this.state.cryptoResult } />
-                    </table>
-                </div>
-            )
-        }
-    }
+    useEffect(() => {
+        getCryptoData();
+    }, [])
+
+    return (
+        <div className="crypto__container">
+            <CryptoFilters />
+            <table className="crypto__list">
+                <thead className="crypto__list--header">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>MKT CAP</th>
+                    <th>% Chng (1h)</th>
+                    <th>% Chng (24h)</th>
+                </tr>
+                </thead>
+                <CryptoContent data = { CryptoStoreData } />
+            </table>
+        </div>
+    )
 }
 
 export default Crypto
