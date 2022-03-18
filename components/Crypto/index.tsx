@@ -6,10 +6,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../store/reducer";
 import { RootState } from "../../store";
 
-const Crypto = (props: object): JSX.Element => {
-    const CryptoStoreData: object = useSelector((state: RootState) => {
-        return state.data;
-    }),
+const Crypto = (): JSX.Element => {
+    const selectedCurrency: string = useSelector((state: RootState) => {
+            return state.currency;
+        }),
         dispatch = useDispatch(),
         updateData = (CryptoData: {}) => {
             dispatch(actions.updateData(CryptoData))
@@ -25,10 +25,12 @@ const Crypto = (props: object): JSX.Element => {
         }
         const allCryptoList: string = cryptoList.join(",");
 
-        fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${allCryptoList}&tsyms=ARS`)
+        // console.log(selectedCurrency);
+        fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${allCryptoList}&tsyms=${selectedCurrency}`)
             .then((response) => { return response.json() })
 
             .then((data) => {
+                console.log(data, selectedCurrency);
                 updateData(data);
             })
 
@@ -37,23 +39,24 @@ const Crypto = (props: object): JSX.Element => {
 
     useEffect(() => {
         getCryptoData();
-    }, [])
+        // console.log(selectedCurrency)
+    }, [selectedCurrency])
 
     return (
         <div className="crypto__container">
             <CryptoFilters />
             <table className="crypto__list">
                 <thead className="crypto__list--header">
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>MKT CAP</th>
-                    <th>% Chng (1h)</th>
-                    <th>% Chng (24h)</th>
-                </tr>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>MKT CAP</th>
+                        <th>% Chng (1h)</th>
+                        <th>% Chng (24h)</th>
+                    </tr>
                 </thead>
-                <CryptoContent data = { CryptoStoreData } />
+                <CryptoContent />
             </table>
         </div>
     )

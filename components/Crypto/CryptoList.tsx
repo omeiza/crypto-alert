@@ -1,15 +1,17 @@
 import React from 'react';
 import CryptoListItem from './CryptoListItem';
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
-interface props {
-    data: {
-        [x: string]: any;
-    };
-}
-
-const CryptoList = (props: props) => {
+const CryptoList = () => {
     let count = 0;
-    const data = props.data['DISPLAY'];
+    const cryptoStoreData: any = useSelector((state: RootState) => {
+            return state.data;
+        });
+
+    // console.log(cryptoStoreData);
+
+    const data: object = cryptoStoreData['DISPLAY'];
 
     if (!data) {
         return (
@@ -30,7 +32,7 @@ const CryptoList = (props: props) => {
                     count++;
 
                     return (
-                        <CryptoListItem key={count} count={count} data={data[k]}/>
+                        <CryptoListItem key = { count } count = { count } data = { data[k] }/>
                     )
                 })
             }

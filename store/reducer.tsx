@@ -2,19 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface CryptoState {
     readonly data: object,
-    currency: string
+    readonly currency: string
 }
 
 const initialState: CryptoState = {
     data: {},
-    currency: ''
+    currency: 'NGN'
 }
 
 const cryptoSlice = createSlice({
     name: 'crypto',
     initialState,
     reducers: {
-        addCurrency(state, action) {
+        setCurrency(state, action) {
             state.currency = action.payload;
         },
         updateData(state, action) {
