@@ -4,16 +4,16 @@ import CryptoFilters from "./CryptoFilters";
 import { getCryptoData } from "../Helpers";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../store/reducer";
-import store, { RootState } from "../../store";
+import { RootState } from "../../store";
 
 const Crypto = (): JSX.Element => {
     const selectedCurrency: string = useSelector((state: RootState) => {
             return state.currency;
         }),
         dispatch = useDispatch(),
-        updateData = (cryptoData: object): Promise<any> => new Promise((resolve, reject) => {
-            resolve(dispatch(actions.updateData(cryptoData)));
-        });
+        updateData = (cryptoData: object) => {
+            dispatch(actions.updateData(cryptoData))
+        };
 
     const updateCryptoData = (): void => {
         getCryptoData(selectedCurrency)
@@ -21,9 +21,6 @@ const Crypto = (): JSX.Element => {
 
             .then((cryptoData) => {
                 updateData({ data: cryptoData['DISPLAY'], currency: selectedCurrency })
-                    // .then((a) => {
-                    //     console.log(store.getState().data);
-                    // })
             })
 
             .catch((err) => { console.error(`Fetch error: ${err}`)})
