@@ -13,8 +13,8 @@ interface props {
 const CryptoListItem = (props: props) => {
     const selectedCurrency: string = useSelector((state: RootState) => {
         return state.currency;
-    })
-        // console.log(selectedCurrency);
+    });
+
     const data: data = props.data,
         hrChange: string = data[selectedCurrency]["CHANGEPCTHOUR"],
         twoFourHrChange: string = data[selectedCurrency]["CHANGEPCT24HOUR"];

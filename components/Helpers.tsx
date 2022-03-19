@@ -8,8 +8,21 @@ const initialCoinList = (): object[] => {
 	return JSON.parse('[{"Bitcoin": "BTC","Ethereum": "ETH","Ripple": "XRP","Bitcoin Cash": "BCH","Cardano": "ADA","Litecoin": "LTC","Dash": "DASH","Monero": "XHR","Bitcoin Gold": "BTG","Ethereum Classic": "ETC","Zcash": "ZEC"}]');
 }
 
+const getCryptoData = (selectedCurrency: string): Promise<Response> => {
+	const cryptoTypes: object[] = initialCoinList(),
+		cryptoTypesObject = cryptoTypes[0],
+		cryptoList: string[] = [];
+
+	for (const coin in cryptoTypesObject) { // @ts-ignore
+		cryptoList.push(cryptoTypesObject[coin]);
+	}
+
+	const allCryptoList: string = cryptoList.join(",");
+	return fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${allCryptoList}&tsyms=${selectedCurrency}`)
+}
+
 const objectToArray = (thisObject: any): string[] => {
 	return thisObject.entries();
 }
 
-export { objectToArray, countryList, initialCoinList }
+export { objectToArray, countryList, initialCoinList, getCryptoData }

@@ -14,11 +14,8 @@ const cryptoSlice = createSlice({
     name: 'crypto',
     initialState,
     reducers: {
-        setCurrency(state, action) {
-            state.currency = action.payload;
-        },
         updateData(state, action) {
-            state.data = action.payload;
+            return { ...state, data: action.payload.data, currency: action.payload.currency };
         }
     }
 });
