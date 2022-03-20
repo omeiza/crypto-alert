@@ -7,7 +7,7 @@ interface CryptoState {
 
 const initialState: CryptoState = {
     data: {},
-    currency: 'NGN'
+    currency: 'USD'
 }
 
 const cryptoSlice = createSlice({
