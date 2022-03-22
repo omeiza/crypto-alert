@@ -12,7 +12,7 @@ const Home: NextPage = () => {
                 <meta name="description" content="Get alert about price changes and update for your Cryptocurrency" />
             </Head>
             <main>
-                <h1> Get Bitcoin & crypto price analysis in your mailbox. </h1>
+                <h1> Get Bitcoin & crypto prices analysis in your mailbox. </h1>
                 <Provider store = { store } >
                     <Crypto />
                 </Provider>

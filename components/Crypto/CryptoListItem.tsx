@@ -1,8 +1,9 @@
 import { useSelector,  } from "react-redux";
 import { RootState } from "../../store";
+import React from "react";
 
 type data = {
-    [x: string]: any;
+    [key: string]: any;
 };
 
 interface props {

@@ -6,7 +6,6 @@ import {RootState} from "../../store";
 const CryptoList = () => {
     let count = 0;
     const data: object = useSelector((state: RootState) => {
-        console.log(state.data);
         return state.data;
     });
 
