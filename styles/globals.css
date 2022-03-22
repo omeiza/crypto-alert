@@ -120,6 +120,15 @@ td {
   font-weight: 500;
 }
 
+td.withIMG {
+  display: flex;
+  align-items: center;
+}
+
+td.withIMG img {
+  margin-right: 10px;
+}
+
 .crypto__container .crypto__list {
   width: 100%;
   position: relative;

@@ -7,6 +7,7 @@ type data = {
 
 interface props {
     count: number;
+    name: string;
     data: data;
 }
 
@@ -25,7 +26,7 @@ const CryptoListItem = (props: props) => {
     return (
         <tr>
             <td>{ props.count }</td>
-            <td>{ data[selectedCurrency]["FROMSYMBOL"] }</td>
+            <td className="withIMG"><img alt={ props.name } width = {25} src={`https://www.cryptocompare.com${ data[selectedCurrency]["IMAGEURL"] }`} /> { props.name }</td>
             <td>{ data[selectedCurrency]["PRICE"] }</td>
             <td>{ data[selectedCurrency]["MKTCAP"] }</td>
             <td className = {`ticker ${tickerHrChange}`}>{ hrChange }%</td>

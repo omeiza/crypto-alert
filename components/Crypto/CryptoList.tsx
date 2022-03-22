@@ -6,6 +6,7 @@ import {RootState} from "../../store";
 const CryptoList = () => {
     let count = 0;
     const data: object = useSelector((state: RootState) => {
+        console.log(state.data);
         return state.data;
     });
 
@@ -28,7 +29,7 @@ const CryptoList = () => {
                     count++;
 
                     return (
-                        <CryptoListItem key={count} count={count} data={data[k]} />
+                        <CryptoListItem key={count} count={count} name={k} data={data[k]} />
                     )
                 })
             }
