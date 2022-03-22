@@ -40,8 +40,8 @@ const Crypto = (): JSX.Element => {
                         <th>Name</th>
                         <th>Price</th>
                         <th>MKT CAP</th>
-                        <th>% Chng (1h)</th>
-                        <th>% Chng (24h)</th>
+                        <th>1hr %</th>
+                        <th>24hr %</th>
                     </tr>
                 </thead>
                 <CryptoContent />

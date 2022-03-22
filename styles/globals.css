@@ -1,10 +1,10 @@
 :root {
-  --page-width: 48rem;
+  --page-width: 56rem;
   --bg: rgb(34 34 34);
   /*--table-bg: #f8f8f8;*/
   --table-bg: #253237;
   --body: #ececec;
-  --font-main: 'GroteskNormal', sans-serif;
+  --font-main: 'Duplicate Sans', sans-serif;
   --font-bold: 'GroteskBold', sans-serif;
 }
 
@@ -68,7 +68,7 @@ header {
   border-radius: 5px;
   overflow-x: auto;
   border: 1px solid rgb(209 209 209 / 8%);
-  background-color: var(--table-bg);
+  background-color: transparent;
   box-shadow: rgb(0 0 0 / 2%) 0 1px 2px 0;
   border-bottom: none;
 }
@@ -94,7 +94,7 @@ table {
 }
 
 td, th {
-  padding: 1em 0.75em;
+  padding: 0.75em 0.65em;
 }
 
 th {
@@ -116,8 +116,8 @@ thead tr {
 
 td {
   border-bottom: 1px solid rgb(209 209 209 / 8%);
-  font-size: 0.9em;
-  font-weight: 500;
+  font-size: 0.95em;
+  font-weight: 400;
 }
 
 td.withIMG {
@@ -152,7 +152,7 @@ td.withIMG img {
   width: 100%;
   border: 1px solid rgb(209 209 209 / 8%);
   padding: 0.6em 1em 0.5em;
-  background-color: #384c58;
+  background-color: #363636;
   color: inherit;
 }
 
