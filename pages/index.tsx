@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Crypto from '../components/Crypto'
+import CryptoBoard from '../components/Crypto'
 import { Provider } from "react-redux"
 import store from './../store'
 
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
             <main>
                 <h1> Get Bitcoin & crypto prices analysis in your mailbox. </h1>
                 <Provider store = { store } >
-                    <Crypto />
+                    <CryptoBoard />
                 </Provider>
             </main>
             <footer>

@@ -1,5 +1,5 @@
 :root {
-  --page-width: 56rem;
+  --page-width: 60rem;
   --bg: rgb(34 34 34);
   /*--table-bg: #f8f8f8;*/
   --table-bg: #253237;
@@ -34,6 +34,7 @@ a {
 
 h1, h2, h3, h4, h5 {
   font-weight: 700;
+  font-family: var(--font-bold);
 }
 
 h1 {
@@ -41,8 +42,12 @@ h1 {
   line-height: 1.3;
   text-align: center;
   color: rgb(249 94 54);
-  font-family: var(--font-bold);
   margin: 1.5em 0;
+}
+
+h2 {
+  font-size: 1.2em;
+  text-align: center;
 }
 
 abbr {
@@ -64,7 +69,7 @@ header {
 
 /*Table*/
 .crypto__container {
-  margin: 3rem 0;
+  margin: 1.5rem 0 3rem;
   border-radius: 5px;
   overflow-x: auto;
   border: 1px solid rgb(209 209 209 / 8%);
@@ -129,6 +134,54 @@ td.withIMG img {
   margin-right: 10px;
 }
 
+td.actions {
+  position: relative;
+  text-align: right;
+}
+
+td.actions .crypto__options {
+  position: absolute;
+  background-color: #363636;
+  z-index: 2;
+  min-width: 100px;
+  height: auto;
+  right: calc(100% - 65px);
+  top: calc(100% - 5px);
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 8px;
+}
+
+td.actions a {
+  border-radius: 5px;
+  display: block;
+  font-size: 1rem;
+  padding: 7px 9px;
+  background-color: #363636;
+  text-align: left;
+}
+
+td.actions .crypto__options span {
+  display: block;
+}
+
+td.actions a:hover {
+  background-color: rgb(77 77 77);
+}
+
+td.actions a:last-of-type {
+  border: none;
+}
+
+td.actions .imgWrapper {
+  transform: rotate(90deg);
+  display: inline-block;
+}
+
+td.actions a:last-of-type {
+  margin: 0;
+}
+
 .crypto__container .crypto__list {
   width: 100%;
   position: relative;
@@ -164,7 +217,21 @@ td.withIMG img {
   border: 1px solid rgb(209 209 209 / 8%);
 }
 
-.filterSection {
+.filterSection, .crypto__tools {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.crypto__tools {
+  grid-column-gap: 20px;
+}
+
+.crypto__tools > div {
+  border: 1px solid rgb(209 209 209 / 8%);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.crypto__tools > div h2 {
+  margin-top: 0;
 }
