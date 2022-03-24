@@ -10,24 +10,10 @@ interface props {
     data: { [key: string]: any };
 }
 
-const CryptoOptions = (props: { name: string }): JSX.Element => {
-    return (
-        <div className="crypto__options">
-            <span><Link href={`/alert/${ props.name }`}>Alert</Link></span>
-            <span><Link href={`/convert/${ props.name }`}>Convert</Link></span>
-            <span><Link href={`/convert/${ props.name }`}>View Historical Data</Link></span>
-        </div>
-    )
-}
-
 const CryptoListItem = (props: props) => {
-    const [ showCryptoOptions, setShowCryptoOptions ] = useState(false);
-
     const selectedCurrency: string = useSelector((state: RootState) => {
         return state.currency;
     });
-
-    const toggleCryptoOptions = (): void => !showCryptoOptions ? setShowCryptoOptions(true) : setShowCryptoOptions(false);
 
     const data: { [key: string]: any } = props.data,
         hrChange: string = data[selectedCurrency]["CHANGEPCTHOUR"],
@@ -54,10 +40,7 @@ const CryptoListItem = (props: props) => {
             <td className = {`ticker ${tickerHrChange}`}>{ hrChange }%</td>
             <td className = {`ticker ${tickerTwoFourHrChange}`}>{ twoFourHrChange }%</td>
             <td className = "actions">
-                <span className="imgWrapper">
-                    <Image width = { 19 } height = { 5 } onClick = { toggleCryptoOptions } src = '/img/options-svgrepo-com.png' />
-                </span>
-                { showCryptoOptions ? <CryptoOptions name = { props.name }  /> : null }
+                <Link href={`/alert/${ props.name }`}>Alert</Link>
             </td>
         </tr>
     )

@@ -3,7 +3,7 @@
   --bg: #fefefe;
   /*--table-bg: #f8f8f8;*/
   --table-bg: #253237;
-  --body: #342f2e;
+  --body: rgb(10, 11, 13);
   --font-main: 'Maison Neue', sans-serif;
   --font-bold: 'GroteskBold', sans-serif;
 }
@@ -48,6 +48,7 @@ h1 {
 p {
   line-height: 1.4em;
   margin: 0;
+  color: #4d4d4d;
 }
 
 h2 {
@@ -77,9 +78,9 @@ header {
   margin: 1.5rem 0 3rem;
   border-radius: 5px;
   overflow-x: auto;
-  border: 1px solid rgb(159 154 154 / 20%);
+  /*border: 1px solid rgb(159 154 154 / 20%);*/
   background-color: white;
-  box-shadow: rgb(0 0 0 / 2%) 0 1px 2px 0;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 3%), 0 0 180px 0 rgb(0 0 0 / 3%);
   border-bottom: none;
 }
 
@@ -101,7 +102,7 @@ table {
 }
 
 td, th {
-  padding: 0.75em 0.65em;
+  padding: 0.65em 0.75em;
 }
 
 th {
@@ -114,40 +115,52 @@ th {
 }
 
 thead tr {
-  border-bottom: 1px solid rgb(159 154 154 / 20%);
+  border-bottom: 1px solid rgb(159 154 154 / 10%);
   z-index: 1;
   padding-top: 1rem;
 }
 
 td {
-  border-bottom: 1px solid rgb(159 154 154 / 20%);
+  border-bottom: 1px solid rgb(159 154 154 / 10%);
   font-size: 0.9em;
   font-weight: 400;
 }
 
+tr:hover {
+  background-color: rgb(239, 242, 245);
+}
+
 td.withIMG {
-  display: flex;
-  align-items: center;
   font-weight: 700;
 }
 
 td.withIMG img {
   margin-right: 10px;
+  vertical-align: middle;
 }
 
-td.actions {
-  position: relative;
-  text-align: right;
+td.actions a {
+  font-weight: 700;
+  border-radius: 10px;
+  display: block;
+  font-size: 0.75rem;
+  padding: 7px 9px;
+  background-color: #eff2f5;
+  text-align: center;
+  font-family: var(--font-main);
+  color: rgb(56, 97, 251);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 td.actions .crypto__options {
   position: absolute;
-  background-color: #433126;
+  background-color: #eff2f5;
   z-index: 2;
   min-width: 100px;
   width: max-content;
   height: auto;
-  right: calc(100% - 50px);
+  right: calc(100% - 30px);
   top: calc(100% - 5px);
   border-radius: 5px;
   overflow: hidden;
@@ -158,19 +171,8 @@ td.actions .crypto__options span {
   display: block;
 }
 
-td.actions a {
-  font-weight: 700;
-  border-radius: 5px;
-  display: block;
-  font-size: 0.75rem;
-  padding: 7px 9px;
-  background-color: #433126;
-  text-align: left;
-  font-family: var(--font-main);
-}
-
 td.actions a:hover {
-  background-color: #7b5b46;
+  background-color: #dadfe5;
 }
 
 td.actions a:last-of-type {
@@ -196,7 +198,7 @@ td.actions a:last-of-type {
 }
 
 .inputStyle {
-  border-bottom: 1px solid rgb(159 154 154 / 20%);
+  border-bottom: 1px solid rgb(159 154 154 / 10%);
   padding: 0.5em;
 }
 
@@ -207,9 +209,9 @@ td.actions a:last-of-type {
   font-size: 0.8em;
   border-radius: 5px;
   width: 100%;
-  border: 1px solid rgb(159 154 154 / 20%);
+  border: none;
   padding: 0.6em 1em 0.5em;
-  background-color: transparent;
+  background-color: rgb(239, 242, 245);
   font-weight: 700;
   color: inherit;
 }
@@ -219,7 +221,7 @@ td.actions a:last-of-type {
 .inputStyle select:active,
 .inputStyle select:focus {
   outline: none;
-  border: 1px solid rgb(159 154 154 / 20%);
+  border: none;
 }
 
 .filterSection, .crypto__tools {
@@ -232,8 +234,9 @@ td.actions a:last-of-type {
 }
 
 .crypto__tools > div {
-  border: 1px solid rgb(159 154 154 / 20%);
-  padding: 20px;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 3%), 0 0 180px 0 rgb(0 0 0 / 3%);
+  background-color: white;
+  padding: 30px;
   border-radius: 5px;
 }
 
