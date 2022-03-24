@@ -1,10 +1,10 @@
 :root {
-  --page-width: 60rem;
-  --bg: rgb(34 34 34);
+  --page-width: 64rem;
+  --bg: #fefefe;
   /*--table-bg: #f8f8f8;*/
   --table-bg: #253237;
-  --body: #ececec;
-  --font-main: 'Duplicate Sans', sans-serif;
+  --body: #342f2e;
+  --font-main: 'Maison Neue', sans-serif;
   --font-bold: 'GroteskBold', sans-serif;
 }
 
@@ -34,7 +34,7 @@ a {
 
 h1, h2, h3, h4, h5 {
   font-weight: 700;
-  font-family: var(--font-bold);
+  font-family: var(--font-main);
 }
 
 h1 {
@@ -45,9 +45,14 @@ h1 {
   margin: 1.5em 0;
 }
 
+p {
+  line-height: 1.4em;
+  margin: 0;
+}
+
 h2 {
   font-size: 1.2em;
-  text-align: center;
+  margin-bottom: 10px;
 }
 
 abbr {
@@ -72,8 +77,8 @@ header {
   margin: 1.5rem 0 3rem;
   border-radius: 5px;
   overflow-x: auto;
-  border: 1px solid rgb(209 209 209 / 8%);
-  background-color: transparent;
+  border: 1px solid rgb(159 154 154 / 20%);
+  background-color: white;
   box-shadow: rgb(0 0 0 / 2%) 0 1px 2px 0;
   border-bottom: none;
 }
@@ -81,12 +86,9 @@ header {
 table {
   border-radius: 5px;
   border-collapse: collapse;
-  /*background-color: var(--table-bg);*/
-  /*color: white;*/
 }
 
 .ticker {
-  /*font-family: Euclid, Helvetica Neue, sans-serif;*/
   font-weight: bold;
 }
 
@@ -103,31 +105,30 @@ td, th {
 }
 
 th {
-  font-family: var(--font-bold);
+  font-family: var(--font-main);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  padding-top: 1rem;
+  padding: 0.8rem 0.7rem 0.7rem;
   font-weight: 700;
-  font-size: 0.6em;
+  font-size: 0.8em;
 }
 
 thead tr {
-  position: sticky;
-  top: 0;
-  border-bottom: 1px solid rgb(209 209 209 / 8%);
+  border-bottom: 1px solid rgb(159 154 154 / 20%);
   z-index: 1;
   padding-top: 1rem;
 }
 
 td {
-  border-bottom: 1px solid rgb(209 209 209 / 8%);
-  font-size: 0.95em;
+  border-bottom: 1px solid rgb(159 154 154 / 20%);
+  font-size: 0.9em;
   font-weight: 400;
 }
 
 td.withIMG {
   display: flex;
   align-items: center;
+  font-weight: 700;
 }
 
 td.withIMG img {
@@ -141,32 +142,35 @@ td.actions {
 
 td.actions .crypto__options {
   position: absolute;
-  background-color: #363636;
+  background-color: #433126;
   z-index: 2;
   min-width: 100px;
+  width: max-content;
   height: auto;
-  right: calc(100% - 65px);
+  right: calc(100% - 50px);
   top: calc(100% - 5px);
   border-radius: 5px;
   overflow: hidden;
   padding: 8px;
 }
 
-td.actions a {
-  border-radius: 5px;
-  display: block;
-  font-size: 1rem;
-  padding: 7px 9px;
-  background-color: #363636;
-  text-align: left;
-}
-
 td.actions .crypto__options span {
   display: block;
 }
 
+td.actions a {
+  font-weight: 700;
+  border-radius: 5px;
+  display: block;
+  font-size: 0.75rem;
+  padding: 7px 9px;
+  background-color: #433126;
+  text-align: left;
+  font-family: var(--font-main);
+}
+
 td.actions a:hover {
-  background-color: rgb(77 77 77);
+  background-color: #7b5b46;
 }
 
 td.actions a:last-of-type {
@@ -192,20 +196,21 @@ td.actions a:last-of-type {
 }
 
 .inputStyle {
-  border-bottom: 1px solid rgb(209 209 209 / 8%);
+  border-bottom: 1px solid rgb(159 154 154 / 20%);
   padding: 0.5em;
 }
 
 .inputStyle input,
 .inputStyle select {
   height: 40px;
-  font-family: var(--font-bold);
+  font-family: var(--font-main);
   font-size: 0.8em;
   border-radius: 5px;
   width: 100%;
-  border: 1px solid rgb(209 209 209 / 8%);
+  border: 1px solid rgb(159 154 154 / 20%);
   padding: 0.6em 1em 0.5em;
-  background-color: #363636;
+  background-color: transparent;
+  font-weight: 700;
   color: inherit;
 }
 
@@ -214,12 +219,12 @@ td.actions a:last-of-type {
 .inputStyle select:active,
 .inputStyle select:focus {
   outline: none;
-  border: 1px solid rgb(209 209 209 / 8%);
+  border: 1px solid rgb(159 154 154 / 20%);
 }
 
 .filterSection, .crypto__tools {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .crypto__tools {
@@ -227,7 +232,7 @@ td.actions a:last-of-type {
 }
 
 .crypto__tools > div {
-  border: 1px solid rgb(209 209 209 / 8%);
+  border: 1px solid rgb(159 154 154 / 20%);
   padding: 20px;
   border-radius: 5px;
 }

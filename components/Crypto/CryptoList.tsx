@@ -9,6 +9,8 @@ const CryptoList = () => {
         return state.data;
     });
 
+    console.log(data);
+
     if (!data) {
         return (
             <tr>

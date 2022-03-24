@@ -15,6 +15,7 @@ const CryptoOptions = (props: { name: string }): JSX.Element => {
         <div className="crypto__options">
             <span><Link href={`/alert/${ props.name }`}>Alert</Link></span>
             <span><Link href={`/convert/${ props.name }`}>Convert</Link></span>
+            <span><Link href={`/convert/${ props.name }`}>View Historical Data</Link></span>
         </div>
     )
 }
@@ -44,6 +45,12 @@ const CryptoListItem = (props: props) => {
             </td>
             <td>{ data[selectedCurrency]["PRICE"] }</td>
             <td>{ data[selectedCurrency]["MKTCAP"] }</td>
+            <td>
+                { data[selectedCurrency]["VOLUMEHOURTO"] }
+            </td>
+            <td>
+                { data[selectedCurrency]["VOLUME24HOURTO"] }
+            </td>
             <td className = {`ticker ${tickerHrChange}`}>{ hrChange }%</td>
             <td className = {`ticker ${tickerTwoFourHrChange}`}>{ twoFourHrChange }%</td>
             <td className = "actions">
