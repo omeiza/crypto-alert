@@ -18,7 +18,7 @@ body {
 
 body {
   margin: 8px;
-  background-color: var(--bg);
+  /*background-color: var(--bg);*/
   color: var(--body);
 }
 
@@ -48,12 +48,12 @@ h1 {
 p {
   line-height: 1.4em;
   margin: 0;
-  color: #4d4d4d;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 10px;
+  font-family: var(--font-bold);
 }
 
 abbr {
@@ -75,12 +75,10 @@ header {
 
 /*Table*/
 .crypto__container {
-  margin: 1.5rem 0 3rem;
+  margin: 3rem 0 3rem;
   border-radius: 5px;
   overflow-x: auto;
-  /*border: 1px solid rgb(159 154 154 / 20%);*/
-  background-color: white;
-  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 3%), 0 0 180px 0 rgb(0 0 0 / 3%);
+  /*box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 3%), 0 0 180px 0 rgb(0 0 0 / 3%);*/
   border-bottom: none;
 }
 
@@ -106,12 +104,12 @@ td, th {
 }
 
 th {
-  font-family: var(--font-main);
+  font-family: var(--font-bold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 0.8rem 0.7rem 0.7rem;
   font-weight: 700;
-  font-size: 0.8em;
+  font-size: 0.6em;
 }
 
 thead tr {
@@ -126,9 +124,9 @@ td {
   font-weight: 400;
 }
 
-tr:hover {
-  background-color: rgb(239, 242, 245);
-}
+/*tr:hover {*/
+/*  background-color: rgb(239, 242, 245);*/
+/*}*/
 
 td.withIMG {
   font-weight: 700;
@@ -143,36 +141,18 @@ td.actions a {
   font-weight: 700;
   border-radius: 10px;
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   padding: 7px 9px;
-  background-color: #eff2f5;
+  background-color: #e9e6ce;
   text-align: center;
-  font-family: var(--font-main);
-  color: rgb(56, 97, 251);
+  font-family: var(--font-bold);
+  color: rgb(93 116 81);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-td.actions .crypto__options {
-  position: absolute;
-  background-color: #eff2f5;
-  z-index: 2;
-  min-width: 100px;
-  width: max-content;
-  height: auto;
-  right: calc(100% - 30px);
-  top: calc(100% - 5px);
-  border-radius: 5px;
-  overflow: hidden;
-  padding: 8px;
-}
-
-td.actions .crypto__options span {
-  display: block;
-}
-
 td.actions a:hover {
-  background-color: #dadfe5;
+  background-color: #e6e3b7;
 }
 
 td.actions a:last-of-type {
@@ -226,18 +206,24 @@ td.actions a:last-of-type {
 
 .filterSection, .crypto__tools {
   display: grid;
+}
+
+.filterSection {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
 .crypto__tools {
-  grid-column-gap: 20px;
+  grid-column-gap: 80px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.crypto__tools_img {
+  text-align: center;
 }
 
 .crypto__tools > div {
-  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 3%), 0 0 180px 0 rgb(0 0 0 / 3%);
-  background-color: white;
-  padding: 30px;
-  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
 }
 
 .crypto__tools > div h2 {
