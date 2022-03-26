@@ -3,13 +3,16 @@ import CryptoListItem from './CryptoListItem';
 import {useSelector} from "react-redux";
 import {RootState} from "../../store";
 
-const CryptoList = () => {
-    let count = 0;
-    const data: object = useSelector((state: RootState) => {
-        return state.data;
-    });
+interface Props {
+    data: object
+}
 
-    console.log(data);
+const CryptoList = (props: Props) => {
+    let count = 0;
+    // const data: object = useSelector((state: RootState) => {
+    //     return state.data;
+    // });
+    const data: object = props.data;
 
     if (!data) {
         return (

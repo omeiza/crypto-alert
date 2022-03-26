@@ -7,29 +7,34 @@ import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../store/reducer";
 import { RootState } from "../../store";
 
-const Crypto = (): JSX.Element => {
-    const selectedCurrency: string = useSelector((state: RootState) => {
-            return state.currency;
-        }),
-        dispatch = useDispatch(),
-        updateData = (cryptoData: object) => {
-            dispatch(actions.updateData(cryptoData))
-        };
+interface Props {
+    data: object
+}
 
-    const updateCryptoData = (): void => {
-        getCryptoData(selectedCurrency)
-            .then((response) => { return response.json() })
-
-            .then((cryptoData) => {
-                updateData({ data: cryptoData['DISPLAY'], currency: selectedCurrency })
-            })
-
-            .catch((err) => { console.error(`Fetch error: ${err}`)})
-    }
-
-    useEffect(() => {
-        updateCryptoData();
-    }, [])
+const Crypto = (props: Props): JSX.Element => {
+    console.log(props);
+    // const selectedCurrency: string = useSelector((state: RootState) => {
+    //         return state.currency;
+    //     }),
+    //     dispatch = useDispatch(),
+    //     updateData = (cryptoData: object) => {
+    //         dispatch(actions.updateData(cryptoData))
+    //     };
+    //
+    // const updateCryptoData = (): void => {
+    //     getCryptoData(selectedCurrency)
+    //         .then((response) => { return response.json() })
+    //
+    //         .then((cryptoData) => {
+    //             updateData({ data: cryptoData['DISPLAY'], currency: selectedCurrency })
+    //         })
+    //
+    //         .catch((err) => { console.error(`Fetch error: ${err}`)})
+    // }
+    //
+    // useEffect(() => {
+    //     updateCryptoData();
+    // }, [])
 
     return (
         <>
@@ -47,10 +52,10 @@ const Crypto = (): JSX.Element => {
                         <th>Volume (24hr)</th>
                         <th>1hr %</th>
                         <th>24hr %</th>
-                        <th></th>
+                        <th />
                     </tr>
                     </thead>
-                    <CryptoContent />
+                    <CryptoContent data = { props.data } />
                 </table>
             </div>
         </>

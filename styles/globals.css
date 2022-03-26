@@ -196,6 +196,12 @@ td.actions a:last-of-type {
   color: inherit;
 }
 
+.inputStyle select {
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+}
+
 .inputStyle input:active,
 .inputStyle input:focus,
 .inputStyle select:active,

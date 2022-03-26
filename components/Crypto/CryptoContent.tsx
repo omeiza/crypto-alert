@@ -1,9 +1,13 @@
 import CryptoList from './CryptoList';
 
-const CryptoContent = (): JSX.Element => {
+interface Props {
+    data: object
+}
+
+const CryptoContent = (props: Props): JSX.Element => {
     return (
         <tbody className="crypto__list--body">
-            <CryptoList  />
+            <CryptoList data = { props.data }  />
         </tbody>
     );
 }
