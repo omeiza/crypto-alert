@@ -9,11 +9,15 @@ interface Props {
     cryptoServerData?: object;
 }
 
-interface data {
-    data: object
-}
-
 const Home: NextPage<Props> = ({ cryptoServerData }) => {
+    if (!cryptoServerData) {
+        return (
+            <div>
+                Hello
+            </div>
+        )
+    }
+
     return (
         <div>
             <Head>
@@ -39,4 +43,4 @@ Home.getInitialProps = async (ctx) => {
     return { cryptoServerData: json['DISPLAY'] }
 }
 
-export default Home
+export default Home;

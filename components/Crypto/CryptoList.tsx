@@ -4,7 +4,7 @@ import {useSelector} from "react-redux";
 import {RootState} from "../../store";
 
 interface Props {
-    data: object
+    data: { [key: string]: any };
 }
 
 const CryptoList = (props: Props) => {

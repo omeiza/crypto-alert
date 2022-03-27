@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 
-const Alert: NextPage = (props) => {
+const Convert:NextPage = (props) => {
     return (
         <div>
-            Hello world!
+            Hello
         </div>
     )
 }
 
-export default Alert;
+export default Convert;

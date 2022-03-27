@@ -8,11 +8,10 @@ import { actions } from "../../store/reducer";
 import { RootState } from "../../store";
 
 interface Props {
-    data: object
+    data: { [key: string]: any };
 }
 
 const Crypto = (props: Props): JSX.Element => {
-    console.log(props);
     // const selectedCurrency: string = useSelector((state: RootState) => {
     //         return state.currency;
     //     }),
