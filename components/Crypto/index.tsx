@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import CryptoContent from './CryptoContent';
 import CryptoFilters from "./CryptoFilters";
-import CryptoTools from "./CryptoTools";
 import { getCryptoData } from "../Helpers";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../store/reducer";
@@ -36,28 +35,25 @@ const Crypto = (props: Props): JSX.Element => {
     // }, [])
 
     return (
-        <>
-            <CryptoTools />
-            <div className="crypto__container">
-                <CryptoFilters />
-                <table className="crypto__list">
-                    <thead className="crypto__list--header">
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>MKT CAP</th>
-                        <th>Volume (1hr)</th>
-                        <th>Volume (24hr)</th>
-                        <th>1hr %</th>
-                        <th>24hr %</th>
-                        <th />
-                    </tr>
-                    </thead>
-                    <CryptoContent data = { props.data } />
-                </table>
-            </div>
-        </>
+        <div className="crypto__container">
+            <CryptoFilters />
+            <table className="crypto__list">
+                <thead className="crypto__list--header">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>MKT CAP</th>
+                    <th>Volume (1hr)</th>
+                    <th>Volume (24hr)</th>
+                    <th>1hr %</th>
+                    <th>24hr %</th>
+                    <th />
+                </tr>
+                </thead>
+                <CryptoContent data = { props.data } />
+            </table>
+        </div>
     )
 }
 

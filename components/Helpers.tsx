@@ -21,8 +21,8 @@ const getCryptoData = (selectedCurrency: string): Promise<Response> => {
 	return fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${allCryptoList}&tsyms=${selectedCurrency}`)
 }
 
-const objectToArray = (thisObject: any): string[] => {
-	return thisObject.entries();
-}
+// const objectToArray = (thisObject: any): string[] => {
+// 	return thisObject.entries();
+// }
 
-export { objectToArray, countryList, initialCoinList, getCryptoData }
+export { countryList, initialCoinList, getCryptoData }
