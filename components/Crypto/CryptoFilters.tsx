@@ -50,9 +50,6 @@ const CryptoFilters = (): JSX.Element => {
 
     return (
         <div className="filterSection">
-            <div className="inputStyle searchSection">
-                <input placeholder="Search Crypto e.g BTC" />
-            </div>
             <div className="inputStyle currencySelector">
                 <select value = { selectedStoreCurrency } onChange={ (e) => setCurrency(e.target.value) }>
                     { currencyOptions(currencies) }

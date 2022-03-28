@@ -25,7 +25,10 @@ const Home: NextPage<Props> = ({ cryptoServerData }) => {
                 <meta name="description" content="Get alert about price changes and update for your Cryptocurrency" />
             </Head>
             <main>
-                <h1> Get Bitcoin & crypto prices analysis in your mailbox. </h1>
+                <h1>
+                    Get Crypto Alerts.
+                    <small>For Free</small>
+                </h1>
                 <Provider store = { store } >
                     <CryptoBoard data = { cryptoServerData } />
                 </Provider>
