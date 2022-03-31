@@ -3,7 +3,8 @@ import Head from 'next/head'
 import CryptoBoard from '../components/Crypto'
 import { Provider } from "react-redux"
 import store from './../store'
-import { getCryptoData } from "../components/Helpers";
+import { getCryptoData } from "../components/Helpers"
+import Footer from "../components/Footer";
 
 interface Props {
     cryptoServerData?: object;
@@ -33,7 +34,7 @@ const Home: NextPage<Props> = ({ cryptoServerData }) => {
                     <CryptoBoard data = { cryptoServerData } />
                 </Provider>
             </main>
-            <footer />
+            <Footer />
         </div>
     )
 }

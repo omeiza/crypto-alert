@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { countryList, getCryptoData } from "../Helpers";
 import { actions } from "../../store/reducer";
 import { RootState } from "../../store";
@@ -54,6 +55,12 @@ const CryptoFilters = (): JSX.Element => {
                 <select value = { selectedStoreCurrency } onChange={ (e) => setCurrency(e.target.value) }>
                     { currencyOptions(currencies) }
                 </select>
+            </div>
+            <div className="crypto__btn">
+                <Link href='/alert'>Create Crypto Alert</Link>
+            </div>
+            <div className="crypto__btn">
+                <Link href='/convert'>Crypto Converter</Link>
             </div>
         </div>
     );
