@@ -191,7 +191,7 @@ td.actions a:last-of-type {
 }
 
 .inputStyle {
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .inputStyle select {
@@ -221,8 +221,8 @@ td.actions a:last-of-type {
 
 .filterSection {
   grid-template-columns: 2fr 1fr 1fr;
-  grid-column-gap: 20px;
-  padding: 0 20px;
+  grid-column-gap: 10px;
+  padding: 0 10px;
 }
 
 .crypto__tools {
@@ -271,7 +271,7 @@ td.actions a:last-of-type {
 }
 
 .crypto__btn {
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .crypto__btn a {
