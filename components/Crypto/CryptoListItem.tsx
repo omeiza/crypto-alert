@@ -2,22 +2,20 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 import Image from "next/image";
 import { RootState } from "../../store";
-import React, { useState } from "react";
+import React from "react";
 
 interface props {
     count: number;
     name: string;
+    currency: string,
     data: { [key: string]: any };
 }
 
 const CryptoListItem = (props: props) => {
-    const selectedCurrency: string = useSelector((state: RootState) => {
-        return state.currency;
-    });
-
-    const data: { [key: string]: any } = props.data,
-        hrChange: string = data[selectedCurrency]["CHANGEPCTHOUR"],
-        twoFourHrChange: string = data[selectedCurrency]["CHANGEPCT24HOUR"];
+    const currency = props.currency,
+        data: { [key: string]: any } = props.data,
+        hrChange: string = data[currency]["CHANGEPCTHOUR"],
+        twoFourHrChange: string = data[currency]["CHANGEPCT24HOUR"];
 
     let tickerHrChange: string = (parseFloat(hrChange) < 0) ? 'negative' : 'positive',
         tickerTwoFourHrChange: string = (parseFloat(twoFourHrChange)) < 0 ? 'negative' : 'positive';
@@ -26,16 +24,16 @@ const CryptoListItem = (props: props) => {
         <tr>
             <td>{ props.count }</td>
             <td className="withIMG">
-                <Image alt={ props.name } width = { 25 } height = { 25 } src={`https://www.cryptocompare.com${ data[selectedCurrency]["IMAGEURL"] }`} />
+                <Image alt={ props.name } width = { 25 } height = { 25 } src={`https://www.cryptocompare.com${ data[currency]["IMAGEURL"] }`} />
                 { props.name }
             </td>
-            <td>{ data[selectedCurrency]["PRICE"] }</td>
-            <td>{ data[selectedCurrency]["MKTCAP"] }</td>
+            <td className="price">{ data[currency]["PRICE"] }</td>
+            <td>{ data[currency]["MKTCAP"] }</td>
             <td>
-                { data[selectedCurrency]["VOLUMEHOURTO"] }
+                { data[currency]["VOLUMEHOURTO"] }
             </td>
             <td>
-                { data[selectedCurrency]["VOLUME24HOURTO"] }
+                { data[currency]["VOLUME24HOURTO"] }
             </td>
             <td className = {`ticker ${tickerHrChange}`}>{ hrChange }%</td>
             <td className = {`ticker ${tickerTwoFourHrChange}`}>{ twoFourHrChange }%</td>

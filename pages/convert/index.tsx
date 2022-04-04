@@ -12,7 +12,6 @@ const Convert:NextPage = () => {
             <main>
                 <h1>
                     Crypto Converter.
-                    <small>1 BTC = $ 45,956.2</small>
                 </h1>
             </main>
             <Footer />

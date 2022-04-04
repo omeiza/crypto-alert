@@ -12,7 +12,6 @@ const Alert:NextPage = () => {
             <main>
                 <h1>
                      Create Crypto Alert.
-                    <small>Get Push Notification</small>
                 </h1>
             </main>
             <Footer />

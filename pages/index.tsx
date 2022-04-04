@@ -6,8 +6,16 @@ import store from './../store'
 import { getCryptoData } from "../components/Helpers"
 import Footer from "../components/Footer";
 
+/**
+ * @TODO
+ * 1. Redux refactoring
+ */
+
 interface Props {
-    cryptoServerData?: object;
+    cryptoServerData?: {
+        data: { [key: string]: any },
+        currency: string
+    };
 }
 
 const Home: NextPage<Props> = ({ cryptoServerData }) => {
@@ -28,10 +36,9 @@ const Home: NextPage<Props> = ({ cryptoServerData }) => {
             <main>
                 <h1>
                     Get Crypto Alerts.
-                    <small>For Free</small>
                 </h1>
                 <Provider store = { store } >
-                    <CryptoBoard data = { cryptoServerData } />
+                    <CryptoBoard currency = { cryptoServerData.currency } data = { cryptoServerData.data } />
                 </Provider>
             </main>
             <Footer />
@@ -40,11 +47,13 @@ const Home: NextPage<Props> = ({ cryptoServerData }) => {
 }
 
 Home.getInitialProps = async (ctx) => {
-    const selectedCurrency: string = 'USD',
-        response = await getCryptoData(selectedCurrency),
+    let selectedCurrency: string | string[] = 'USD';
+    if (ctx.query.currency) selectedCurrency = ctx.query.currency;
+
+    const response = await getCryptoData(selectedCurrency),
         json = await response.json();
 
-    return { cryptoServerData: json['DISPLAY'] }
+    return { cryptoServerData: { data: json['DISPLAY'], currency: selectedCurrency } }
 }
 
 export default Home;

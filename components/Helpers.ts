@@ -8,7 +8,7 @@ const initialCoinList = (): object[] => {
 	return JSON.parse('[{"BTC": "Bitcoin","ETH": "Ethereum","USDT": "Tether","BNB": "BNB","USDC": "USD Coin","XRP": "XRP","LUNA": "Terra","ADA": "Cardano","SOL": "Solana","AVAX": "Avalanche","DOT": "Polkadot","BUSD": "Binance USD","DOGE": "Dogecoin","UST": "TerraUSD","SHIB": "Shiba Inu","MATIC": "Polygon","WBTC": "Wrapped Bitcoin","CRO": "Cronos","DAI": "Dai","ATOM": "Cosmos","LTC": "Litcoin","NEAR": "NEAR Protocol","LINK": "Chainlink","UNI": "Uniswap","TRX": "TRON","BCH": "Bitcoin Cash","FTT": "FTX Token","LEO": "UNUS SED LEO","ALGO": "Algorand","XLM": "Stellar","MANA": "Decentraland","ETC": "Ethereum Classic","BTCB": "Bitcoin BEP2","HBAR": "Hedera","ICP": "Internet Computer","SAND": "The Sandbox","APE": "ApeCoin","XMR": "Monero","WAVES": "Waves","EGLD": "Elrond","FTM": "Fantom","VET": "VeChain","FIL": "Filecoin","AXS": "Axie Infinity","KLAY": "Klaytn","THETA": "Theta Network","XTZ": "Tezos","RUNE": "THORChain","HNT": "Helium","ZEC": "Zcash"}]');
 }
 
-const getCryptoData = (selectedCurrency: string): Promise<Response> => {
+const getCryptoData = (selectedCurrency: string | string[]): Promise<Response> => {
 	const cryptoTypes: object[] = initialCoinList(),
 		cryptoTypesObject: any = cryptoTypes[0],
 		cryptoList: string[] = [];

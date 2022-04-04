@@ -1,9 +1,10 @@
 :root {
   --page-width: 64rem;
-  --bg: #1c2127;
-  --table-bg: #22272d;
+  --bg: #222;
+  --table-bg: #2e2b2b;
   --body: #adbac7;
   --font: "Maison Neue", serif;
+  --font-bold: "GroteskBold", serif;
 }
 
 html,
@@ -38,17 +39,19 @@ h1, h2, h3, h4, h5 {
 
 h1 {
   font-size: 4.45em;
-  line-height: 1.25;
-  color: #8d9ba8;
+  line-height: 1.05;
+  color: #ffd88f;
   margin: 1.5em 0 0.5em;
   font-weight: 900;
-  text-align: center;
+  font-family: var(--font-bold);
+  width: 70%;
 }
 
 h1 small {
-  font-size: 0.8em;
+  font-size: 1em;
   color: #cdd9e5;
   display: block;
+  margin-top: 20px;
 }
 
 p {
@@ -142,7 +145,7 @@ tr:last-of-type td {
 }
 
 td {
-  border-bottom: 1px solid #383f47;
+  border-bottom: 1px solid #3a3a3a;
   font-size: 0.85em;
   font-weight: 500;
 }
@@ -153,6 +156,12 @@ tr {
 
 td.withIMG {
   font-weight: 700;
+  color: white;
+}
+
+td.price,
+th.priceHeader {
+  border-right: 1px solid #3a3a3a;
 }
 
 td.withIMG > span {
@@ -166,7 +175,7 @@ td.actions a {
   display: block;
   font-size: 0.8rem;
   padding: 4px 1px;
-  background-color: #373e47;
+  background-color: #413c3c;
   text-align: center;
   color: #adbac7;
   border: 1px solid rgba(205,217,229,0.1);
@@ -200,7 +209,7 @@ td.actions a:last-of-type {
   border-radius: 5px;
   width: 100%;
   padding: 0.6em 1em 0.5em;
-  background-color: #1c2128;
+  background-color: #222222;
   font-weight: 700;
   color: var(--body);
   border: 1px solid #383f47;
@@ -278,9 +287,10 @@ td.actions a:last-of-type {
   font-weight: 700;
   text-align: center;
   display: block;
-  font-size: 0.95em;
+  font-size: 0.75em;
   border-radius: 5px;
-  padding: 0.65em 1em;
-  background-color: #ffd08a;
-  color: #383f47;
+  padding: 0.95em 1em;
+  background-color: #ffd78f;
+  color: #222222;
+  font-family: var(--font-bold);
 }

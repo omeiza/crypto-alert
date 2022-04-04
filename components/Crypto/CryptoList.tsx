@@ -1,17 +1,13 @@
 import React from 'react';
 import CryptoListItem from './CryptoListItem';
-import {useSelector} from "react-redux";
-import {RootState} from "../../store";
 
 interface Props {
+    currency: string,
     data: { [key: string]: any };
 }
 
 const CryptoList = (props: Props) => {
     let count = 0;
-    // const data: object = useSelector((state: RootState) => {
-    //     return state.data;
-    // });
     const data: object = props.data;
 
     if (!data) {
@@ -33,7 +29,7 @@ const CryptoList = (props: Props) => {
                     count++;
 
                     return (
-                        <CryptoListItem key={count} count={count} name={k} data={data[k]} />
+                        <CryptoListItem key={count} count={count} name={k} currency = { props.currency } data={data[k]} />
                     )
                 })
             }

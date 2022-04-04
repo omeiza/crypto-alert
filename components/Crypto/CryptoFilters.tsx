@@ -1,31 +1,33 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { countryList, getCryptoData } from "../Helpers";
-import { actions } from "../../store/reducer";
-import { RootState } from "../../store";
-import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { countryList } from "../Helpers";
 
-const CryptoFilters = (): JSX.Element => {
-    const [currencies, setCurrencies] = useState({}),
-        selectedStoreCurrency: string = useSelector((state: RootState) => { return state.currency; }),
-        dispatch = useDispatch(),
-        updateData = (CryptoData: {}) => {
-            dispatch(actions.updateData(CryptoData))
+interface Props {
+    currency: string
+}
+
+const CryptoFilters = (props: Props): JSX.Element => {
+    const router = useRouter(),
+        [currencies, setCurrencies] = useState({}),
+        [selectedCurrency, setSelectedCurrency] = useState(props.currency),
+        currencyOptions = (optionsObj: any) => {
+            let optionsContent = [];
+            for (const coin in optionsObj) {
+                optionsContent.push (
+                    <option key={coin} value={coin}>{`${coin}: ${optionsObj[coin]}`}</option>
+                );
+            }
+
+            return optionsContent;
         },
-        setCurrency = (currencyABBR: string) => {
-            getCryptoData(currencyABBR)
-                .then((response) => { return response.json() })
-
-                .then((cryptoData) => {
-                    updateData({data: cryptoData['DISPLAY'], currency: currencyABBR});
-                })
-
-                .catch((err) => { console.error(`Fetch error: ${err}`)})
-        };
-
-    const getFilterData = async (): Promise<Object[]> => {
-        return await countryList();
-    }
+        getFilterData = async (): Promise<Object[]> => {
+            return await countryList();
+        },
+        setCurrency = (currency: string) => {
+            router.push(`/?currency=${ currency }`)
+                .then(() => setSelectedCurrency(currency));
+        }
 
     useEffect(() => {
         getFilterData()
@@ -38,21 +40,10 @@ const CryptoFilters = (): JSX.Element => {
             })
     }, [])
 
-    const currencyOptions = (optionsObj: any) => {
-        let optionsContent = [];
-        for (const coin in optionsObj) {
-            optionsContent.push (
-                <option key={coin} value={coin}>{`${coin}: ${optionsObj[coin]}`}</option>
-            );
-        }
-
-        return optionsContent;
-    }
-
     return (
         <div className="filterSection">
             <div className="inputStyle currencySelector">
-                <select value = { selectedStoreCurrency } onChange={ (e) => setCurrency(e.target.value) }>
+                <select value = { selectedCurrency } onChange={ (e) => setCurrency(e.target.value) }>
                     { currencyOptions(currencies) }
                 </select>
             </div>

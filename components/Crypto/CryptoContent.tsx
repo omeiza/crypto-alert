@@ -1,13 +1,14 @@
 import CryptoList from './CryptoList';
 
 interface Props {
-    data: object
+    currency: string,
+    data: { [key: string]: any };
 }
 
 const CryptoContent = (props: Props): JSX.Element => {
     return (
         <tbody className="crypto__list--body">
-            <CryptoList data = { props.data }  />
+            <CryptoList currency = { props.currency }  data = { props.data }  />
         </tbody>
     );
 }
