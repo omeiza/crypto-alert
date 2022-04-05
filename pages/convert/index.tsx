@@ -1,6 +1,8 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import Footer from "../../components/Footer";
+import CryptoFilters from "../../components/Crypto/CryptoFilters";
+import CryptoContent from "../../components/Crypto/CryptoContent";
 
 const Convert:NextPage = () => {
     return (
@@ -13,6 +15,38 @@ const Convert:NextPage = () => {
                 <h1>
                     Crypto Converter.
                 </h1>
+                <div className="crypto__container">
+                    <div className="converter__section">
+                        <div className="converter__tool">
+                            <div className="input__style currency__selector">
+                                <label>Amount</label>
+                                <select>
+                                    <option value="AED">AED: United Arab Emirates Dirham</option>
+                                    <option value="ALL">ALL: Albanian Lek</option>
+                                </select>
+                            </div>
+                            <div className="input__style currency__selector">
+                                <label>From</label>
+                                <select>
+                                    <option value="AED">AED: United Arab Emirates Dirham</option>
+                                    <option value="ALL">ALL: Albanian Lek</option>
+                                </select>
+                            </div>
+                            <div className="input__style currency__selector">
+                                <label>To</label>
+                                <select>
+                                    <option value="AED">AED: United Arab Emirates Dirham</option>
+                                    <option value="ALL">ALL: Albanian Lek</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className="inputStyle currencySelector">
+                            Hello
+                        </div>
+                        {/*<div className="crypto__btn"><a href="/alert">Create Crypto Alert</a></div>*/}
+                        {/*<div className="crypto__btn"><a href="/convert">Crypto Converter</a></div>*/}
+                    </div>
+                </div>
             </main>
             <Footer />
         </div>

@@ -15,7 +15,7 @@ const Crypto = (props: Props): JSX.Element => {
                 <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th className="priceHeader">Price</th>
+                    <th className="price__header">Price</th>
                     <th>MKT CAP</th>
                     <th>Volume (1hr)</th>
                     <th>Volume (24hr)</th>

@@ -41,8 +41,8 @@ const CryptoFilters = (props: Props): JSX.Element => {
     }, [])
 
     return (
-        <div className="filterSection">
-            <div className="inputStyle currencySelector">
+        <div className="filter__section">
+            <div className="input__style currency__selector">
                 <select value = { selectedCurrency } onChange={ (e) => setCurrency(e.target.value) }>
                     { currencyOptions(currencies) }
                 </select>

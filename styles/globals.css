@@ -126,12 +126,13 @@ td, th {
 }
 
 th {
+  font-family: var(--font-bold);
   border-top: 1px solid #383f47;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 0.8rem 0.7rem 0.7rem;
   font-weight: 900;
-  font-size: 0.65em;
+  font-size: 0.6em;
 }
 
 thead tr {
@@ -154,36 +155,32 @@ tr {
   border-radius: 5px;
 }
 
-td.withIMG {
+td.with__img {
   font-weight: 700;
   color: white;
 }
 
 td.price,
-th.priceHeader {
+th.price__header {
   border-right: 1px solid #3a3a3a;
 }
 
-td.withIMG > span {
+td.with__img > span {
   vertical-align: middle;
   margin-right: 10px !important;
 }
 
 td.actions a {
+  font-family: var(--font-bold);
   font-weight: 700;
   border-radius: 5px;
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   padding: 4px 1px;
   background-color: #413c3c;
   text-align: center;
   color: #adbac7;
   border: 1px solid rgba(205,217,229,0.1);
-}
-
-td.actions .imgWrapper {
-  transform: rotate(90deg);
-  display: inline-block;
 }
 
 td.actions a:last-of-type {
@@ -199,11 +196,11 @@ td.actions a:last-of-type {
   text-align: left;
 }
 
-.inputStyle {
+.input__style {
   padding: 10px 0;
 }
 
-.inputStyle select {
+.input__style select {
   height: 40px;
   font-size: 0.8em;
   border-radius: 5px;
@@ -219,19 +216,46 @@ td.actions a:last-of-type {
   appearance:none;
 }
 
-.inputStyle select:active,
-.inputStyle select:focus {
+.input__style select:active,
+.input__style select:focus {
   outline: none;
 }
 
-.filterSection, .crypto__tools {
+.filter__section,
+.converter__section,
+.converter__tool {
   display: grid;
 }
 
-.filterSection {
+.converter__section {
+  grid-template-columns: 1fr 1fr;
+}
+
+.converter__tool {
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 20px;
+}
+
+.filter__section {
   grid-template-columns: 2fr 1fr 1fr;
   grid-column-gap: 10px;
   padding: 0 10px;
+}
+
+.converter__tool label {
+  font-family: var(--font-bold);
+  margin-bottom: 10px;
+  font-size: 0.8em;
+  display: block;
+}
+
+.converter__tool .input__style {
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.converter__tool .input__style:last-of-type {
+  margin-bottom: 0;
 }
 
 .crypto__tools {

@@ -23,7 +23,7 @@ const CryptoListItem = (props: props) => {
     return (
         <tr>
             <td>{ props.count }</td>
-            <td className="withIMG">
+            <td className="with__img">
                 <Image alt={ props.name } width = { 25 } height = { 25 } src={`https://www.cryptocompare.com${ data[currency]["IMAGEURL"] }`} />
                 { props.name }
             </td>
