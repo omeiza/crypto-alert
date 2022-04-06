@@ -40,8 +40,15 @@ const Convert:NextPage = () => {
                                 </select>
                             </div>
                         </div>
-                        <div className="inputStyle currencySelector">
-                            Hello
+                        <div className="input__style currency__selector">
+                            <div className="converter__result">
+                                1 BTC (Bitcoin)
+                                <span>=</span>
+                                $ 43,794
+                            </div>
+                            <div className="converter__action">
+                                <button>Refresh</button>
+                            </div>
                         </div>
                         {/*<div className="crypto__btn"><a href="/alert">Create Crypto Alert</a></div>*/}
                         {/*<div className="crypto__btn"><a href="/convert">Crypto Converter</a></div>*/}

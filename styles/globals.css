@@ -233,7 +233,7 @@ td.actions a:last-of-type {
 
 .converter__tool {
   grid-template-rows: 1fr 1fr 1fr;
-  padding: 20px;
+  border-right: 1px solid #3a3a3a;
 }
 
 .filter__section {
@@ -250,12 +250,44 @@ td.actions a:last-of-type {
 }
 
 .converter__tool .input__style {
-  margin-bottom: 20px;
-  padding: 0;
+  padding: 20px;
+  border-bottom: 1px solid #3a3a3a;
 }
 
 .converter__tool .input__style:last-of-type {
-  margin-bottom: 0;
+  padding-bottom: 0;
+  border: none;
+}
+
+.converter__result {
+  font-family: var(--font-bold);
+  padding: 30px;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+.converter__result span {
+  display: block;
+  margin: 20px 0;
+}
+
+.converter__action {
+  padding: 20px;
+  border-top: 1px solid #3a3a3a;
+}
+
+.converter__action button {
+  width: 100%;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  font-size: 0.75em;
+  border-radius: 5px;
+  padding: 0.95em 1em;
+  background-color: #ffd78f;
+  color: #222222;
+  font-family: var(--font-bold);
+  border: none;
 }
 
 .crypto__tools {
